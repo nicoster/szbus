@@ -6,15 +6,14 @@ A nodejs project which powers a website where you query the bus status in Suzhou
 Before I find a website hosting this project, you could only play with it in your computer.
 
 Here is the steps (in OSX. similar for other platform. assume you have node, npm installed)
-```javascript
-git clone git@github.com:nicoster/szbus.git
-cd szbus/
-npm install
-node app.js
-</script>
-```
 
-It's done. Fire up a modern browser like Chrome and navigate to 'localhost:3000' and have fun.
+    git clone git@github.com:nicoster/szbus.git
+    cd szbus/
+    npm install
+    node app.js
+
+
+If nothing goes wrong, it's done. Fire up a modern browser like Chrome and navigate to 'localhost:3000' and have fun.
 
 ## What needs to be done?
 * CSS decoration
@@ -24,7 +23,7 @@ It's done. Fire up a modern browser like Chrome and navigate to 'localhost:3000'
 * more.. 
 
 ## Changelog
-* _Jan.12 
+* _Jan. 2012_ 
   * Very basic feature set has been implemented
 
 ## Credits
