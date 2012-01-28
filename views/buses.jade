@@ -1,0 +1,10 @@
+h2 Buses for #{stop.name}/#{stop.address}
+
+form(method='post', action='/fav', id=stop.code)
+	- each b in buses
+		ul(class='cbpair')
+			input(type='checkbox', value=b.name)
+			div #{b.name} - #{b.hop}
+
+	input(id='addfav', type='submit', value='Add to favorites', disabled)
+

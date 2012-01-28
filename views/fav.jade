@@ -1,0 +1,14 @@
+- if (favs.length)
+	h2 Your favorites
+	a(href='#', id='refresh') Refresh
+	- each fav in favs
+		div(class='favstop', id=fav.code)
+			h3 #{fav.name}
+			- each bus in fav.buses
+				li
+					#{bus}
+	
+h3 Search bus stop
+form(method='post', action='/search')
+	input(name='stop')
+	input(type='submit', value='Search')

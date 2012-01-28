@@ -1,0 +1,6 @@
+h2 Stops with #{criteria}
+
+- each s in stops
+	ul
+		a(href='/stop/' + s.code) #{s.name}/#{s.address}
+		div #{s.buses}

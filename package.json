@@ -1,0 +1,11 @@
+{
+    "name": "szbus"
+  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": {
+      "express": "2.4.2"
+    , "jade": ">= 0.0.1"
+	, "jquery": "1.6.3"
+	, "mongoose": "2.3.12" 
+  }
+}

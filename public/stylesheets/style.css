@@ -1,0 +1,36 @@
+body {
+  padding: 10px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+
+ul.cbpair {
+float: none;
+}
+
+ul.cbpair input {
+clear: left;
+float: left;
+}
+
+ul.cbpair div {
+float: left;
+margin-left: 20px;
+}
+
+#addfav{
+	float: left;
+	clear: both;
+	margin-top:30px;
+	margin-left: 42px;
+}
+
+a#title:link, a#title:visited{
+	text-decoration:none;
+	color:#000;
+}
