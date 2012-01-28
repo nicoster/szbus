@@ -1,3 +1,11 @@
+/**
+	szbus
+	A project which enables you query the bus status in Suzhou, a city close to ShangHai in China.
+	Using nodejs
+	
+	Nick X (nicoster@gmail.com) Jan. 2012
+ */
+
 
 /**
  * Module dependencies.
@@ -148,7 +156,7 @@ app.get('/stop/:code.:format?', function(req, res){
 				}
 
 	      default:{
-					res.render('buses4stop', result);					
+					res.render('buses', result);					
 				}
 			};
 		});
