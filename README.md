@@ -22,6 +22,8 @@ If nothing goes wrong, it's done. Fire up a modern browser like Chrome and navig
 * UI refactoring (more ajax-like)
 * more.. 
 
+If you found this project is useful and interesting, fork it and make it better.
+
 ## Changelog
 * _Jan. 2012_ 
   * Very basic feature set has been implemented
