@@ -1,5 +1,5 @@
 # Introducing szbus
-A nodejs project which powers a website where you query the bus status in Suzhou. 
+A nodejs project which powers a website where you query the bus status in Suzhou, a city close to ShangHai in China.
 
 
 ## How Do I Use It?
