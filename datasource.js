@@ -4,11 +4,10 @@ var $ = require('jquery');
 
 function request(options, handler)
 {
-	options.method = options.data ? 'POST' : 'GET';	
+	options.isPost = function(){return !!this.data;}
+	options.method = options.isPost() ? 'POST' : 'GET';	
 	options.host = 'm.sz-map.com';
 	options.port = 80;
-	
-	options.isPost = function(){return !!this.data;}
 	
 	if (options.isPost())
 	{
