@@ -5,7 +5,7 @@ A nodejs project which powers a website where you query the bus status in Suzhou
 ## How Do I Use It?
 Before I find a website hosting this project, you could only play with it in your computer.
 
-Here is the steps (in OSX. similar for other platform. assume you have node, npm installed)
+Here are the steps (in OSX. similar for other platform. assume you have node, npm installed)
 
     git clone git@github.com:nicoster/szbus.git
     cd szbus/
