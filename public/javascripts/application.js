@@ -14,15 +14,15 @@
 	$('#addfav').click(function(e) {
 		e.preventDefault();
 
-	  var buses = [], params = {};
+		var buses = [], params = {};
 		$('.cbpair input[type="checkbox"]:checked').each(function(index, bus){
 			buses.push($(bus).val());
 		});
 //		alert(buses);
 		params = {'buses': buses, 'stop': $('form').attr('id')};
 
-	  $.post('/fav', params, function(data) {
-	  });
+		$.post('/fav', params, function(data) {
+		});
 	});
 
 	$('#refresh').click(function(e){

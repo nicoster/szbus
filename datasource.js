@@ -23,17 +23,17 @@ function request(options, handler)
 	console.log('isPost:' + options.isPost());
 	
 	var chunks = '', req = http.request(options, function(res) {
-	  res.setEncoding('utf8');
-	  res.on('data', function (chunk) {
+		res.setEncoding('utf8');
+		res.on('data', function (chunk) {
 			chunks += chunk;
-	  });
+		});
 		res.on('end', function (){
 			handler(chunks);
 		});
 	});
 
 	req.on('error', function(e) {
-	  console.log('problem with request: ' + e.message);
+		console.log('problem with request: ' + e.message);
 		handler('');
 	});
 
@@ -47,7 +47,7 @@ function request(options, handler)
 function getBusesByStop(stop, next)
 {
 	var options = {
-	  path: '/real?st=0&dataGuid=' + stop.code + '&sln=' + stop.name + '&rt=n&address=' + stop.address,
+		path: '/real?st=0&dataGuid=' + stop.code + '&sln=' + stop.name + '&rt=n&address=' + stop.address,
 		method: 'GET',
 	};
 	
@@ -67,7 +67,7 @@ function getBusesByStop(stop, next)
 function getBusStops(stop, next)
 {
 	var options = {
-	  path: '/search',
+		path: '/search',
 		data: 'kw=' + stop
 	};
 	

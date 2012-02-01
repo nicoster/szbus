@@ -63,7 +63,7 @@ app.get('/', function(req, res){
 
 app.get('/fav', function(req, res){
 	Favorite.find({sid: req.cookies['connect.sid']}, function(err, favs){
-	  res.render('fav', {'favs': favs});		
+		res.render('fav', {'favs': favs});
 	});
 });
 
@@ -124,16 +124,16 @@ app.get('/update/:code.:format?', function(req, res){
 				};
 				log('_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/');
 				log(result);
-		    switch (req.params.format) {
-		      case 'json':
-		        res.send(result);
-			      break;		
+				switch (req.params.format) {
+					case 'json':
+						res.send(result);
+						break;		
 
-		      default:
-						res.render('buses', result);					
-				}				
+					default:
+						res.render('buses', result);
+				}
 			});
-			
+
 		});
 	});
 	
@@ -147,13 +147,13 @@ app.get('/stop/:code.:format?', function(req, res){
 				'stop': stop,
 				'buses': buses
 			};
-	    switch (req.params.format) {
-	      case 'json':
-	        res.send(result);
-		      break;		
+			switch (req.params.format) {
+				case 'json':
+					res.send(result);
+					break;		
 
-	      default:
-					res.render('buses', result);					
+				default:
+					res.render('buses', result);
 			}
 		});
 	});
