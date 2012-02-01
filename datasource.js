@@ -70,7 +70,7 @@ function getBusStops(stop, next)
 	};
 	
 	request(options, function(html){
-		var stops = [], reg = /dataGuid=.{3}/;
+		var stops = [], reg = /dataGuid=[A-Z]{3}/;
 		$(html).find('#results table').each(function(index, el){
 			var a = $(el).find('a');
 			stops.push({
