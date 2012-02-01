@@ -1,5 +1,7 @@
+'use strict';
+
 (function(){
-	
+	/*global $, alert */
 	$('.cbpair input[type="checkbox"]').click(function(){
 		if ($('.cbpair input[type="checkbox"]:checked').length){
 			$('input[type="submit"]').removeAttr('disabled');
@@ -39,4 +41,4 @@
 		});
 	}).click();
 	
-})();
+}());

@@ -6,6 +6,7 @@
 	Nick X (nicoster@gmail.com) Jan. 2012
  */
 
+'use strict';
 
 /**
  * Module dependencies.
