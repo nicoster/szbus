@@ -4,7 +4,7 @@ var $ = require('jquery');
 
 function request(options, handler)
 {
-	options.isPost = function(){return !!this.data;}
+	options.isPost = function(){return !!this.data;};
 	options.method = options.isPost() ? 'POST' : 'GET';	
 	options.host = 'm.sz-map.com';
 	options.port = 80;
@@ -20,8 +20,7 @@ function request(options, handler)
 	console.log(options);
 	console.log('isPost:' + options.isPost());
 	
-	var chunks = '';
-	var req = http.request(options, function(res) {
+	var chunks = '', req = http.request(options, function(res) {
 	  res.setEncoding('utf8');
 	  res.on('data', function (chunk) {
 			chunks += chunk;
@@ -36,8 +35,9 @@ function request(options, handler)
 		handler('');
 	});
 
-	if (options.isPost())
+	if (options.isPost()){
 		req.write(options.data);
+	}
 		
 	req.end();	
 }
@@ -70,8 +70,7 @@ function getBusStops(stop, next)
 	};
 	
 	request(options, function(html){
-		var stops = [];
-		var reg = /dataGuid=.{3}/;
+		var stops = [], reg = /dataGuid=.{3}/;
 		$(html).find('#results table').each(function(index, el){
 			var a = $(el).find('a');
 			stops.push({

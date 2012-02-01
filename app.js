@@ -21,7 +21,6 @@ var	express = require('express')
 	;
 
 function log(x){console.log(x);}
-//express.session.cookie.maxAge = 1000 * 3600 * 24 * 30;
 
 // Configuration
 app.configure('development', function() {
@@ -46,13 +45,13 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
-  app.use(express.session({ secret: 'youdontknow' }));
+  app.use(express.session({ secret: 'youdontknow', maxAge: 1000*60*60*24*365 }));
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
 });
 
 app.Stop = Stop = require('./models.js').Stop(db);
-app.User = User = require('./models.js').User(db);
+//app.User = User = require('./models.js').User(db);
 app.Favorite = Favorite = require('./models.js').Favorite(db);
 
 // Routes
@@ -95,7 +94,7 @@ app.post('/search', function(req, res){
 			'stops':stops
 		});
 	});
-})
+});
 
 // with filter
 app.get('/update/:code.:format?', function(req, res){
@@ -111,7 +110,7 @@ app.get('/update/:code.:format?', function(req, res){
 //						log('favbus:' + favbus);
 						buses.forEach(function(businfo){
 //							log('businfo.name:' + businfo.name);
-							if (businfo.name.toString() == favbus.toString()){
+							if (businfo.name.toString() === favbus.toString()){
 								selected.push(businfo);
 							}
 						});
@@ -125,15 +124,13 @@ app.get('/update/:code.:format?', function(req, res){
 				log('_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/');
 				log(result);
 		    switch (req.params.format) {
-		      case 'json':{
+		      case 'json':
 		        res.send(result);
 			      break;		
-					}
 
-		      default:{
+		      default:
 						res.render('buses', result);					
-					}
-				};				
+				}				
 			});
 			
 		});
@@ -150,15 +147,13 @@ app.get('/stop/:code.:format?', function(req, res){
 				'buses': buses
 			};
 	    switch (req.params.format) {
-	      case 'json':{
+	      case 'json':
 	        res.send(result);
 		      break;		
-				}
 
-	      default:{
+	      default:
 					res.render('buses', result);					
-				}
-			};
+			}
 		});
 	});
 	
